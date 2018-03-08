@@ -39,6 +39,8 @@
             this.imie = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.errorText = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.user.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.age)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorText)).BeginInit();
@@ -46,6 +48,8 @@
             // 
             // user
             // 
+            this.user.Controls.Add(this.button2);
+            this.user.Controls.Add(this.button1);
             this.user.Controls.Add(this.addUser);
             this.user.Controls.Add(this.wiek);
             this.user.Controls.Add(this.age);
@@ -55,7 +59,7 @@
             this.user.Controls.Add(this.imie);
             this.user.Location = new System.Drawing.Point(13, 13);
             this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(204, 146);
+            this.user.Size = new System.Drawing.Size(204, 199);
             this.user.TabIndex = 0;
             this.user.TabStop = false;
             this.user.Text = "Użytkownik";
@@ -100,6 +104,8 @@
             0,
             0,
             0});
+            this.age.ValueChanged += new System.EventHandler(this.age_ValueChanged);
+            this.age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.age_KeyPress);
             // 
             // surname
             // 
@@ -107,6 +113,7 @@
             this.surname.Name = "surname";
             this.surname.Size = new System.Drawing.Size(100, 20);
             this.surname.TabIndex = 3;
+            this.surname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.surname_KeyPress);
             // 
             // label1
             // 
@@ -123,6 +130,7 @@
             this.nameText.Name = "nameText";
             this.nameText.Size = new System.Drawing.Size(100, 20);
             this.nameText.TabIndex = 1;
+            this.nameText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameText_KeyPress);
             // 
             // imie
             // 
@@ -147,6 +155,26 @@
             // errorText
             // 
             this.errorText.ContainerControl = this;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(115, 135);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Usuń";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.dilit);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(115, 164);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Edytuj";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.edytuj);
             // 
             // Form1
             // 
@@ -177,6 +205,8 @@
         private System.Windows.Forms.Label imie;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ErrorProvider errorText;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
